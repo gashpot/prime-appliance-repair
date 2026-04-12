@@ -302,6 +302,21 @@ const { title, description = "Professional appliance repair services in Troutdal
   @media (max-width: 640px) {
     .mobile-menu-btn {
       display: flex;
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .nav {
+      justify-content: center;
+      position: relative;
+    }
+
+    .logo {
+      position: relative;
+      z-index: 10;
     }
 
     .nav-links {
