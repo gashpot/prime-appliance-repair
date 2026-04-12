@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Message Sent | Prime Appliance Repair">
+  <section class="success-section">
+    <div class="container">
+      <div class="success-box">
+        <div class="success-icon">✓</div>
+        <h1>Message Sent!</h1>
+        <p>Thanks for reaching out. We'll get back to you within 30 minutes during business hours.</p>
+        <p class="note">If you have an urgent issue, call us directly at <a href="tel:+15035551234">(503) 555-1234</a>.</p>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .success-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 0;
+  }
+
+  .success-box {
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: #dcfce7;
+    color: #16a34a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+  }
+
+  .success-box h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .success-box p {
+    color: var(--gray-500);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .note {
+    font-size: 0.95rem !important;
+    color: var(--gray-500);
+  }
+
+  .note a {
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-light);
+  }
+</style>
