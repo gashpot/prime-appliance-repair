@@ -1,0 +1,6 @@
+name = "prime-appliance-repair"
+compatibility_date = "2024-01-01"
+
+# Cloudflare Pages does not use this file for configuration.
+# Environment variables must be set in the Cloudflare Pages dashboard:
+# Site settings → Environment variables → Add variable → RESEND_API_KEY
