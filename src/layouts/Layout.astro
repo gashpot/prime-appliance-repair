@@ -14,6 +14,20 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(image, Astro.site);
 
+// Build breadcrumb crumbs from pathname
+const pathParts = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbs = [{ label: 'Home', href: '/' }];
+let currentHref = '';
+for (const part of pathParts) {
+  currentHref += `/${part}`;
+  let label = part.replace(/-/g, ' ');
+  // Capitalize each word
+  label = label.replace(/\b\w/g, c => c.toUpperCase());
+  if (part === 'service-areas') label = 'Service Areas';
+  if (part === 'appliance') label = 'Appliance Repair';
+  breadcrumbs.push({ label, href: currentHref });
+}
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -98,6 +112,16 @@ const jsonLd = {
       name: "Prime Appliance Repair LLC",
       publisher: { "@id": "https://primerepair.net/#business" },
     },
+    {
+      "@type": "BreadcrumbList",
+      description: "Breadcrumb navigation",
+      itemListElement: breadcrumbs.map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: crumb.label,
+        item: new URL(crumb.href, "https://primerepair.net").href,
+      })),
+    },
   ],
 };
 ---
@@ -154,6 +178,32 @@ const jsonLd = {
         </ul>
       </nav>
     </header>
+
+    {breadcrumbs.length > 1 && (
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+            {breadcrumbs.map((crumb, index) => (
+              <li
+                itemprop="itemListElement"
+                itemtype="https://schema.org/ListItem"
+                class={index === breadcrumbs.length - 1 ? 'breadcrumb-item active' : 'breadcrumb-item'}
+              >
+                {index === breadcrumbs.length - 1 ? (
+                  <span itemprop="name">{crumb.label}</span>
+                ) : (
+                  <a itemprop="item" href={crumb.href}>
+                    <span itemprop="name">{crumb.label}</span>
+                  </a>
+                )}
+                <meta itemprop="position" content={String(index + 1)} />
+                {index < breadcrumbs.length - 1 && <span class="breadcrumb-sep" aria-hidden="true">›</span>}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </nav>
+    )}
 
     <main>
       <slot />
@@ -416,6 +466,52 @@ const jsonLd = {
     text-align: center;
     color: var(--gray-500);
     font-size: 0.875rem;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumb-nav {
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-300);
+    padding: 0.75rem 0;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb-item a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .breadcrumb-item a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+  }
+
+  .breadcrumb-item.active span {
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  .breadcrumb-sep {
+    color: var(--gray-400);
+    font-size: 0.875rem;
+    margin: 0 0.15rem;
   }
 
   @media (max-width: 900px) {
