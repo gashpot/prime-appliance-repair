@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://primeappliancerepair.com',
+  site: 'https://primerepair.net',
   compressHTML: true,
   integrations: [sitemap()],
 });

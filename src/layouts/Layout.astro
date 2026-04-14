@@ -8,7 +8,7 @@ interface Props {
 const {
   title,
   description = "Professional appliance repair services in Troutdale, OR and surrounding areas. Fast, reliable, and affordable.",
-  image = "https://primeappliancerepair.com/logo.png",
+  image = "https://primerepair.net/logo.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -19,10 +19,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://primeappliancerepair.com/#business",
+      "@id": "https://primerepair.net/#business",
       name: "Prime Appliance Repair LLC",
       description: description,
-      url: "https://primeappliancerepair.com",
+      url: "https://primerepair.net",
       telephone: "+1-503-389-3142",
       email: "contact@primerepair.net",
       address: {
@@ -47,7 +47,7 @@ const jsonLd = {
         },
       ],
       priceRange: "$$",
-      image: "https://primeappliancerepair.com/logo.png",
+      image: "https://primerepair.net/logo.png",
       areaServed: {
         "@type": "Place",
         name: "Portland Metropolitan Area",
@@ -93,10 +93,10 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://primeappliancerepair.com/#website",
-      url: "https://primeappliancerepair.com",
+      "@id": "https://primerepair.net/#website",
+      url: "https://primerepair.net",
       name: "Prime Appliance Repair LLC",
-      publisher: { "@id": "https://primeappliancerepair.com/#business" },
+      publisher: { "@id": "https://primerepair.net/#business" },
     },
   ],
 };
