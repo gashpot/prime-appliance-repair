@@ -364,6 +364,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
+    text-align: center;
   }
 
   .why-us-list {
@@ -377,6 +378,9 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     gap: 1rem;
     align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
   }
 
   .why-icon {
@@ -389,6 +393,11 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     font-size: 1.5rem;
     flex-shrink: 0;
+    margin: 0 auto;
+  }
+
+  .why-item div:not(.why-icon) {
+    text-align: center;
   }
 
   .why-item h4 {
