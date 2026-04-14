@@ -1,6 +1,6 @@
 # SEO Action Plan — primerepair.net
 
-*Audit completed: 2026-04-13 | Updated: 2026-04-14*
+*Audit completed: 2026-04-13 | Updated: 2026-04-14 | Service area pages added: 2026-04-14*
 
 ---
 
@@ -16,9 +16,11 @@
 
 ## Tier 2 — Local SEO (capture nearby searches)
 
-- [ ] Create dedicated service area pages for: Gresham, Happy Valley, Fairview, Camas, Washougal
+- [x] Create dedicated service area pages for: Portland, Troutdale, Gresham, Happy Valley, Fairview
+- [ ] Create dedicated pages for: Camas, Washougal
 - [ ] Add full street address to footer and schema (Google Business Profile needs this)
 - [ ] Create/verify Google Business Profile and link to it
+- [x] Link service area footer list to service area pages
 
 ---
 
@@ -42,7 +44,7 @@
 ## Bugs Fixed (2026-04-14)
 
 - [x] Fix JSON-LD wrong domain (primeappliancerepair.com → primerepair.net) in Layout.astro
-- [x] Fix phone hrefs (tel:+150****3142 → tel:+15033893142) across all 6 files
+- [x] Fix phone hrefs (tel:+150****3142 → tel:+15033893142) across all pages including service area pages and footer
 - [x] Align business hours (footer JSON-LD: Mon-Fri 8am → Mon-Sun 10am to match contact page)
 - [x] Rename logo side.png → logo-side.png (space in filename fixed)
 
@@ -75,7 +77,7 @@
 | No Open Graph tags | Poor social sharing previews | Fixed |
 | No canonical URLs | Duplicate content risk | Fixed |
 | Generic meta descriptions | Low click-through from search | Pending |
-| No dedicated service area pages | Missing local search coverage | Pending |
+| No dedicated service area pages | Missing local search coverage | Fixed (5 pages live) |
 | No blog | No long-tail keyword targeting | Pending |
 | Wrong JSON-LD domain | Structured data validation errors | Fixed |
 | Broken phone tel: links | Click-to-call fails | Fixed |

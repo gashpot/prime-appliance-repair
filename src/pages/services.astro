@@ -4,6 +4,96 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Services | Prime Appliance Repair" description="Professional appliance repair services in Troutdale, OR. Refrigerators, washers, dryers, dishwashers, ovens, and more.">
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-refrigerator",
+        name: "Refrigerator & Freezer Repair",
+        description: "Professional refrigerator and freezer repair service in Troutdale, OR and East Metro Portland. Repairs include not cooling, ice maker issues, strange noises, water leaks, door seal replacement, thermostat problems, and compressor issues.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Refrigerator Repair"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-washer",
+        name: "Washer Repair",
+        description: "Professional washing machine repair service in Troutdale, OR and East Metro Portland. Handles not draining, spinning issues, leaks, agitator problems, and error codes on all major brands.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Washer Repair"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-dryer",
+        name: "Dryer Repair",
+        description: "Professional dryer repair service for both gas and electric dryers in Troutdale, OR and East Metro Portland. Repairs include not heating, long dry times, squeaking, and overheating.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Dryer Repair"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-dishwasher",
+        name: "Dishwasher Repair",
+        description: "Professional dishwasher repair service in Troutdale, OR and East Metro Portland. Fixes drainage problems, leaks, poor cleaning, pump issues, and spray arm problems.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Dishwasher Repair"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-oven",
+        name: "Oven & Range Repair",
+        description: "Professional oven and range repair service for gas and electric units in Troutdale, OR and East Metro Portland. Repairs include temperature issues, gas igniter problems, burner lighting, and control board issues.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Oven and Range Repair"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-microwave",
+        name: "Microwave Repair",
+        description: "Professional microwave repair service for countertop, over-the-range, and built-in units in Troutdale, OR and East Metro Portland. Fixes not heating, turntable issues, sparking, and control panel problems.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Microwave Repair"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://primerepair.net/#service-commercial",
+        name: "Commercial Appliance Repair",
+        description: "Commercial appliance repair service for restaurants, bars, convenience stores, and office buildings in Troutdale, OR and East Metro Portland. Services include commercial refrigerators, ice machines, dishwashers, and display cases.",
+        provider: { "@id": "https://primerepair.net/#business" },
+        areaServed: {
+          "@type": "Place",
+          name: "East Metro Portland, OR"
+        },
+        serviceType: "Commercial Appliance Repair"
+      }
+    ]
+  })} />
+
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
