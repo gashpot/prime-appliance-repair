@@ -1,10 +1,10 @@
 # SEO Action Plan — primerepair.net
 
-*Audit completed: 2026-04-13*
+*Audit completed: 2026-04-13 | Updated: 2026-04-14*
 
 ---
 
-## Tier 1 — Foundational (do first)
+## Tier 1 — Foundational (done)
 
 - [x] Add robots.txt pointing to sitemap
 - [x] Generate and submit sitemap.xml (Cloudflare Pages compatible)
@@ -33,25 +33,55 @@
 
 ## Tier 4 — Growth
 
-- [ ] Start a blog — target "appliance repair [city]" long-tail keywords
+- [ ] Start a blog — target long-tail keywords (appliance repair Portland, appliance repair Troutdale, etc.)
 - [ ] Add breadcrumb navigation
-- [ ] Fix image filenames (remove spaces: "logo side.png" → "logo-side.png")
-- [ ] Add lazy loading to Unsplash images
+- [ ] Add lazy loading to Unsplash hero images (home page + about page still use external Unsplash URLs)
 
 ---
 
-## Critical Issues Found
+## Bugs Fixed (2026-04-14)
 
-| Issue | Impact |
-|-------|--------|
-| No robots.txt | Search engines have no crawl guidance |
-| No sitemap.xml | Pages not efficiently discovered |
-| Zero structured data | No rich snippets in search results |
-| No Open Graph tags | Poor social sharing previews |
-| No canonical URLs | Duplicate content risk |
-| Generic meta descriptions | Low click-through from search |
-| No dedicated service area pages | Missing local search coverage |
-| No blog | No long-tail keyword targeting |
+- [x] Fix JSON-LD wrong domain (primeappliancerepair.com → primerepair.net) in Layout.astro
+- [x] Fix phone hrefs (tel:+150****3142 → tel:+15033893142) across all 6 files
+- [x] Align business hours (footer JSON-LD: Mon-Fri 8am → Mon-Sun 10am to match contact page)
+- [x] Rename logo side.png → logo-side.png (space in filename fixed)
+
+---
+
+## Performance Fixes (2026-04-14)
+
+- [x] Compress all 7 service images (~15.8MB → ~340KB, 97.8% reduction)
+- [x] Add width/height attributes to all service images (fix CLS)
+- [x] Host service images locally (was using broken Unsplash URLs)
+
+---
+
+## Design Fixes (2026-04-14)
+
+- [x] Center hero text content on homepage
+- [x] Center Why Choose Us heading on homepage
+- [x] Center each list item individually in Why Us section
+- [x] Vertically center icons with text in Why Us list
+
+---
+
+## Critical Issues Found (audit)
+
+| Issue | Impact | Status |
+|-------|--------|--------|
+| No robots.txt | Search engines have no crawl guidance | Fixed |
+| No sitemap.xml | Pages not efficiently discovered | Fixed |
+| Zero structured data | No rich snippets in search results | Fixed |
+| No Open Graph tags | Poor social sharing previews | Fixed |
+| No canonical URLs | Duplicate content risk | Fixed |
+| Generic meta descriptions | Low click-through from search | Pending |
+| No dedicated service area pages | Missing local search coverage | Pending |
+| No blog | No long-tail keyword targeting | Pending |
+| Wrong JSON-LD domain | Structured data validation errors | Fixed |
+| Broken phone tel: links | Click-to-call fails | Fixed |
+| Unaligned business hours | Inconsistent info across pages | Fixed |
+| Space in logo filename | Filesystem/deployment risk | Fixed |
+| Unoptimized images (~16MB) | Slow page loads | Fixed |
 
 ---
 
@@ -59,15 +89,17 @@
 
 - Clean H1/H2/H3 hierarchy
 - SSL/HTTPS active
-- Click-to-call phone link
+- Click-to-call phone link (now functional)
 - Fast Astro static site
 - Strong service descriptions
 - Transparent pricing ($89 diagnostic, $180+ labor)
 - Good trust signals (30-day warranty, licensed, insured)
 - Same-day service messaging
 - Personal shop differentiation (Anton)
-- All images have alt text
+- All images have alt text + dimensions
 - Prominent CTAs
+- LocalBusiness + WebSite JSON-LD schema
+- OG tags + Twitter Card on all pages
 
 ---
 
@@ -75,7 +107,7 @@
 
 | Page | URL | Issues |
 |------|-----|--------|
-| Home | primerepair.net/ | Meta, OG, schema, robots.txt, sitemap |
-| Services | primerepair.net/services/ | Meta, OG, schema, robots.txt, sitemap |
-| About | primerepair.net/about/ | Meta, OG, schema, robots.txt, sitemap |
-| Contact | primerepair.net/contact/ | Meta, OG, schema, robots.txt, sitemap |
+| Home | primerepair.net/ | Fixed |
+| Services | primerepair.net/services/ | Fixed |
+| About | primerepair.net/about/ | Fixed |
+| Contact | primerepair.net/contact/ | Fixed |
