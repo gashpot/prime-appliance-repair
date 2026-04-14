@@ -2,9 +2,104 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Professional appliance repair services in Troutdale, OR and surrounding areas. Fast, reliable, and affordable." } = Astro.props;
+const {
+  title,
+  description = "Professional appliance repair services in Troutdale, OR and surrounding areas. Fast, reliable, and affordable.",
+  image = "https://primeappliancerepair.com/logo.png",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image, Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://primeappliancerepair.com/#business",
+      name: "Prime Appliance Repair LLC",
+      description: description,
+      url: "https://primeappliancerepair.com",
+      telephone: "+1-503-389-3142",
+      email: "contact@primerepair.net",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1392 NE Coho Ct",
+        addressLocality: "Troutdale",
+        addressRegion: "OR",
+        postalCode: "97060",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 45.5373,
+        longitude: -122.3873,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "08:00",
+          closes: "18:00",
+        },
+      ],
+      priceRange: "$$",
+      image: "https://primeappliancerepair.com/logo.png",
+      areaServed: {
+        "@type": "Place",
+        name: "Portland Metropolitan Area",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Appliance Repair Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Refrigerator & Freezer Repair",
+              provider: { "@id": "https://primeappliancerepair.com/#business" },
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Washer & Dryer Repair",
+              provider: { "@id": "https://primeappliancerepair.com/#business" },
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Dishwasher Repair",
+              provider: { "@id": "https://primeappliancerepair.com/#business" },
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Oven & Range Repair",
+              provider: { "@id": "https://primeappliancerepair.com/#business" },
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://primeappliancerepair.com/#website",
+      url: "https://primeappliancerepair.com",
+      name: "Prime Appliance Repair LLC",
+      publisher: { "@id": "https://primeappliancerepair.com/#business" },
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -14,6 +109,27 @@ const { title, description = "Professional appliance repair services in Troutdal
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Prime Appliance Repair LLC" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link rel="icon" type="image/png" href="/LOGOsmall.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

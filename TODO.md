@@ -6,11 +6,11 @@
 
 ## Tier 1 — Foundational (do first)
 
-- [ ] Add robots.txt pointing to sitemap
-- [ ] Generate and submit sitemap.xml (Cloudflare Pages compatible)
-- [ ] Add LocalBusiness + Service schema JSON-LD to all pages
-- [ ] Add Open Graph tags (og:title, og:description, og:image, og:url) to all pages
-- [ ] Add canonical URLs to all pages
+- [x] Add robots.txt pointing to sitemap
+- [x] Generate and submit sitemap.xml (Cloudflare Pages compatible)
+- [x] Add LocalBusiness + Service schema JSON-LD to all pages
+- [x] Add Open Graph tags (og:title, og:description, og:image, og:url) to all pages
+- [x] Add canonical URLs to all pages
 
 ---
 
