@@ -36,7 +36,7 @@
 ## Tier 4 — Growth
 
 - [ ] Start a blog — target long-tail keywords (appliance repair Portland, appliance repair Troutdale, etc.)
-- [ ] Add breadcrumb navigation
+- [x] Add breadcrumb navigation
 - [ ] Add lazy loading to Unsplash hero images (home page + about page still use external Unsplash URLs)
 
 ---
