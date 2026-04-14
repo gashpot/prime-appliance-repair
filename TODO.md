@@ -1,6 +1,6 @@
 # SEO Action Plan — primerepair.net
 
-*Audit completed: 2026-04-13 | Updated: 2026-04-14 | Service area pages added: 2026-04-14*
+*Audit completed: 2026-04-13 | Updated: 2026-04-14 | Service area pages + schema updates: 2026-04-14*
 
 ---
 
@@ -18,7 +18,7 @@
 
 - [x] Create dedicated service area pages for: Portland, Troutdale, Gresham, Happy Valley, Fairview
 - [ ] Create dedicated pages for: Camas, Washougal
-- [ ] Add full street address to footer and schema (Google Business Profile needs this)
+- [x] Add full street address to footer and schema (1392 NE Coho Ct, Troutdale, OR 97060)
 - [ ] Create/verify Google Business Profile and link to it
 - [x] Link service area footer list to service area pages
 
@@ -29,7 +29,7 @@
 - [ ] Add FAQPage schema to About and Contact pages
 - [ ] Add Review/Rating aggregate schema
 - [ ] Expand About page with: years experience, number of repairs, certifications
-- [ ] Add Service schema for each service type on /services
+- [x] Add Service schema for each service type on /services (7 services)
 
 ---
 
