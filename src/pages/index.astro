@@ -379,8 +379,6 @@ import Layout from '../layouts/Layout.astro';
     gap: 1rem;
     align-items: flex-start;
     justify-content: center;
-    text-align: center;
-    flex-direction: column;
   }
 
   .why-icon {
@@ -393,11 +391,10 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     font-size: 1.5rem;
     flex-shrink: 0;
-    margin: 0 auto;
   }
 
-  .why-item div:not(.why-icon) {
-    text-align: center;
+  .why-item > div:not(.why-icon) {
+    text-align: left;
   }
 
   .why-item h4 {
