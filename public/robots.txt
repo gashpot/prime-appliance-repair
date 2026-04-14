@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://primeappliancerepair.com/sitemap-index.xml
+Sitemap: https://primerepair.net/sitemap-index.xml
