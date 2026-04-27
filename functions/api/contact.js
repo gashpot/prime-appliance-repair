@@ -62,7 +62,7 @@ export async function onRequestPost({ request, env }) {
       return new Response("Failed to send email", { status: 500 });
     }
 
-    return Response.redirect(new URL("/success", request.url), 302);
+    return Response.redirect(new URL("/success/", request.url), 302);
   } catch (err) {
     console.error("Worker error:", err);
     return new Response("Server error", { status: 500 });
